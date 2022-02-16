@@ -1,0 +1,26 @@
+<div class="nav-bar">
+  <p>Simple Airbnb</p>
+</div>
+
+<div class="container" style="display: grid;
+                              grid-template-columns: 1fr 1fr 1fr;
+                              justify-content: space-around">
+<div class="card" style="height: 300px;
+                          width: 300px;
+                          text-align: center;
+                          margin: 20px;
+                          padding: 6px;
+                          background-color: #ddd;">
+  <%= @flat.description %>
+  <br><br>
+  <%= @flat.address %>
+  <br><br>
+  <div class="d-flex">
+    <%= @flat.number_of_guests %>
+    <%= @flat.price_per_night %>
+  </div>
+  <div>
+
+  </div>
+</div>
+</div>

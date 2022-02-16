@@ -1,0 +1,35 @@
+<div class="navbar">
+  <h3>Simple Airbnb</h3>
+</div>
+
+<div>
+  <%# <h3>All our flats</h3> %>
+  <h4>All our <%= @flats.count %> flat<%= 's' if @flats.count > 1 %></h4>
+</div>
+
+<div class="container" style="display: grid;
+                              grid-template-columns: 1fr 1fr 1fr;
+                              justify-content: space-around">
+  <% @flats.each do |flat| %>
+  <div class="card" style="height: 300px;
+                           width: 300px;
+                           text-align: center;
+                           margin: 20px;
+                           padding: 6px;
+                           background-color: #ddd;">
+    <%= flat.description %>
+    <br><br>
+    <%= flat.address %>
+    <br><br>
+    <div class="d-flex">
+      <%= flat.number_of_guests %>
+      <%= flat.price_per_night %>
+    </div>
+    <div>
+      <%= link_to 'More info', flat_path(flat) %>
+      <%= link_to 'Edit', edit_flat_path(flat) %>
+      <%= link_to 'Delete', method: :delete %>
+    </div>
+  </div>
+  <% end %>
+</div>
